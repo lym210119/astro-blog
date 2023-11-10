@@ -1,13 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
+
+const pageTitle = '首页';
 ---
 
-<Layout title="Welcome to Astro.">
+<BaseLayout pageTitle={pageTitle}>
 	<main>
 		<div>index</div>
 	</main>
-</Layout>
+</BaseLayout>
 
 <style>
 	main {

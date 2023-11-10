@@ -1,11 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const pageTitle = '关于';
 ---
 
-<Layout title="About Astro">
-  <div class="about">hello about</div>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="about">关于</div>
   
-</Layout>
+</BaseLayout>
 
 <style>
   .about {
