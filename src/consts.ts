@@ -1,7 +1,7 @@
-export const SITE_TITLE = 'Clarity Notes';
+export const SITE_TITLE = '65style Notes';
 export const SITE_DESCRIPTION =
 	'一个以产品设计、前端工程与数字体验为主题的 Astro 博客，采用苹果风格视觉与流畅阅读体验。';
-export const SITE_URL = 'https://example.com';
+export const SITE_URL = 'https://65style.netlify.app';
 
 export const NAV_ITEMS = [
 	{ href: '/', label: '首页' },
@@ -14,7 +14,7 @@ export const NAV_ITEMS = [
 ];
 
 export const SOCIAL_LINKS = [
-	{ href: 'https://github.com/withastro/astro', label: 'GitHub' },
+	{ href: 'https://github.com/lym210119/astro-blog', label: 'GitHub' },
 	{ href: 'https://astro.build', label: 'Astro' },
 ];
 
