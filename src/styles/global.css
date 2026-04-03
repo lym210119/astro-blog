@@ -14,7 +14,7 @@
   --color-accent-soft: rgba(0, 113, 227, 0.12);
   --color-border: rgba(15, 23, 42, 0.08);
   --color-border-light: rgba(255, 255, 255, 0.7);
-  
+
   /* Shadows - Apple Depth */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
@@ -22,7 +22,7 @@
   --shadow-xl: 0 20px 60px rgba(15, 23, 42, 0.08);
   --shadow-hover: 0 28px 80px rgba(15, 23, 42, 0.12);
   --shadow-button: 0 4px 12px rgba(0, 113, 227, 0.25);
-  
+
   /* Radius - Apple Roundness */
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -30,7 +30,7 @@
   --radius-xl: 24px;
   --radius-2xl: 32px;
   --radius-full: 9999px;
-  
+
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-mono: "SF Mono", SFMono-Regular, ui-monospace, monospace;
@@ -253,35 +253,37 @@ img {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+
   /* Reduce glass effect on mobile for performance */
   .glass-panel {
     backdrop-filter: blur(16px) saturate(140%);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
     border-radius: var(--radius-lg);
   }
-  
+
   /* Touch-friendly buttons */
   .btn {
     padding: 0.875rem 1.5rem;
-    min-height: 44px; /* iOS touch target */
+    min-height: 44px;
+    /* iOS touch target */
   }
-  
+
   /* Larger touch targets */
   .chip {
     padding: 0.5rem 0.875rem;
     min-height: 32px;
   }
-  
+
   /* Adjust typography for mobile */
   .text-display {
     font-size: clamp(2rem, 8vw, 2.75rem);
     letter-spacing: -0.02em;
   }
-  
+
   .text-title-1 {
     font-size: clamp(1.5rem, 5vw, 1.875rem);
   }
-  
+
   .text-title-2 {
     font-size: 1.125rem;
   }
@@ -292,7 +294,7 @@ img {
   .glass-panel {
     border-radius: var(--radius-md);
   }
-  
+
   .text-display {
     font-size: 1.875rem;
   }
@@ -303,7 +305,7 @@ img {
   .safe-area-top {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .safe-area-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -311,6 +313,7 @@ img {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -404,6 +407,9 @@ img {
   padding: 0.2em 0.4em;
   border-radius: 6px;
   color: var(--color-text);
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: auto;
 }
 
 .prose pre {
@@ -421,6 +427,9 @@ img {
   color: #e2e8f0;
   font-size: 0.875rem;
   line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-x: auto;
 }
 
 .prose img {
@@ -473,19 +482,22 @@ img {
     --color-border: rgba(255, 255, 255, 0.08);
     --color-border-light: rgba(255, 255, 255, 0.1);
   }
-  
+
   body::before {
     background:
       radial-gradient(ellipse 80% 50% at 50% -10%, rgba(60, 100, 200, 0.12), transparent),
       radial-gradient(ellipse 60% 40% at 80% 20%, rgba(30, 30, 50, 0.5), transparent),
       linear-gradient(180deg, #0c0c12 0%, #0a0a0f 45%, #08080c 100%);
   }
-  
+
   .prose blockquote {
     background: rgba(30, 30, 40, 0.5);
   }
-  
+
   .prose code {
     background: rgba(255, 255, 255, 0.08);
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-x: auto;
   }
 }
