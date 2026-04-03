@@ -190,7 +190,7 @@ aria2 开启 RPC 服务后，可以通过图形界面管理下载任务。**Aria
 
 ### 下载 AriaNg
 
-访问 [AriaNg GitHub Releases](https://github.com/mayswind/AriaNg/releases)，下载最新版的 `AriaNg.zip`，解压后双击 `index.html` 即可运行（无需额外服务器）。
+访问 <a href="https://github.com/mayswind/AriaNg/releases" target="_blank" rel="noopener noreferrer">AriaNg GitHub Releases</a>，下载最新版的 `AriaNg.zip`，解压后双击 `index.html` 即可运行（无需额外服务器）。
 
 ### 配置 AriaNg 连接 aria2
 
@@ -247,7 +247,7 @@ aria2 的强大之处在于灵活和高性能，无论是下载普通文件、�
 
 **参考资料**
 
-- [aria2 官方文档](https://aria2.github.io/)
-- [AriaNg GitHub](https://github.com/mayswind/AriaNg)
+- <a href="https://aria2.github.io/" target="_blank" rel="noopener noreferrer">aria2 官方文档</a>
+- <a href="https://github.com/mayswind/AriaNg" target="_blank" rel="noopener noreferrer">AriaNg GitHub</a>
 
 ---
