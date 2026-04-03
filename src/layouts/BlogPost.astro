@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import MainLayout from './MainLayout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, category, tags, readingTime } = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+	<article>
+		<!-- Article Header -->
+		<section class="glass-panel overflow-hidden mb-6">
+			<div class="p-6 sm:p-8 lg:p-10">
+				<!-- Meta -->
+				<div class="flex flex-wrap items-center gap-2 mb-4">
+					<span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium">
+						{category}
+					</span>
+					{readingTime && (
+						<span class="inline-flex items-center gap-1.5 text-caption">
+							<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							{readingTime}
+						</span>
+					)}
+					<time class="text-caption">
+						{pubDate.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
+					</time>
+				</div>
+				
+				<!-- Title -->
+				<h1 class="text-title-1 text-slate-900 mb-4">{title}</h1>
+				
+				<!-- Description -->
+				<p class="text-body text-lg">{description}</p>
+				
+				<!-- Updated Date -->
+				{updatedDate && (
+					<p class="text-caption mt-4 flex items-center gap-1.5">
+						<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+						</svg>
+						最近更新：{updatedDate.toLocaleDateString('zh-CN')}
+					</p>
+				)}
+			</div>
+			
+			<!-- Hero Image -->
+			{heroImage && (
+				<div class="aspect-[21/9] overflow-hidden">
+					<Image 
+						src={heroImage} 
+						alt={title} 
+						widths={[640, 960, 1200, 1600]}
+						sizes="100vw"
+						class="w-full h-full object-cover"
+					/>
+				</div>
+			)}
+			
+			<!-- Tags -->
+			<div class="p-6 sm:p-8 lg:px-10 border-t border-slate-100">
+				<div class="flex flex-wrap gap-2">
+					{tags?.map((tag: string) => (
+						<a 
+							href={`/tags/${tag.toLowerCase()}`}
+							class="chip hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-colors"
+						>
+							{tag}
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+		
+		<!-- Article Content -->
+		<div class="glass-panel p-6 sm:p-8 lg:p-10">
+			<div class="prose prose-slate max-w-none">
+				<slot />
+			</div>
+		</div>
+		
+		<!-- Article Footer -->
+		<section class="mt-6 glass-panel p-6 sm:p-8">
+			<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+				<div>
+					<h3 class="text-title-3 text-slate-900 mb-1">喜欢这篇文章？</h3>
+					<p class="text-body text-sm">分享给更多朋友，或订阅 RSS 获取更新。</p>
+				</div>
+				<div class="flex flex-wrap gap-3">
+					<a href="/rss.xml" class="btn btn-secondary">
+						<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
+						</svg>
+						订阅 RSS
+					</a>
+					<a href="/blog" class="btn btn-primary">
+						更多文章
+						<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
+	</article>
+</MainLayout>

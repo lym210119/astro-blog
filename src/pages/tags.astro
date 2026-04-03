@@ -1,0 +1,42 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getTags } from '../lib/blog';
+
+const tags = await getTags();
+---
+
+<MainLayout title="标签｜Clarity Notes" description="按标签浏览文章。">
+	<!-- Header -->
+	<section class="glass-panel p-6 sm:p-8 lg:p-10 mb-6">
+		<span class="kicker mb-3 block">Tags</span>
+		<h1 class="text-title-1 text-slate-900 mb-4">标签</h1>
+		<p class="text-body max-w-2xl">通过跨主题标签快速找到关联内容。</p>
+	</section>
+
+	<!-- Tags Cloud -->
+	<section class="glass-panel p-6 sm:p-8">
+		<div class="flex flex-wrap gap-2">
+			{tags.map((tag) => (
+				<a 
+					href={`/tags/${tag.name.toLowerCase()}`}
+					class="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-slate-200/60 text-slate-700 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600 transition-all duration-200"
+				>
+					<span class="font-medium">{tag.name}</span>
+					<span class="text-xs text-slate-400 group-hover:text-blue-400 transition-colors">
+						{tag.count}
+					</span>
+				</a>
+			))}
+		</div>
+		
+		{tags.length === 0 && (
+			<div class="text-center py-12">
+				<svg class="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+				</svg>
+				<h3 class="text-title-3 text-slate-900 mb-2">暂无标签</h3>
+				<p class="text-body">文章标签正在整理中。</p>
+			</div>
+		)}
+	</section>
+</MainLayout>

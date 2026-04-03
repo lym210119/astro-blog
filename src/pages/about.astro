@@ -1,0 +1,93 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { SOCIAL_LINKS } from '../consts';
+---
+
+<MainLayout title="关于｜Clarity Notes" description="关于这个博客与它背后的设计方法。">
+	<!-- Hero -->
+	<section class="glass-panel p-6 sm:p-8 lg:p-10 mb-6">
+		<span class="kicker mb-3 block">About</span>
+		<h1 class="text-title-1 text-slate-900 mb-4">关于这个博客</h1>
+		<p class="text-body max-w-2xl text-lg">
+			Clarity Notes 是一个围绕产品设计、前端工程与数字体验搭建的内容站点，强调苹果风格的视觉秩序与安静的阅读流程。
+		</p>
+	</section>
+
+	<!-- Features Grid -->
+	<section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+		<div class="glass-panel p-6">
+			<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
+				<svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+				</svg>
+			</div>
+			<h3 class="text-title-3 text-slate-900 mb-2">设计</h3>
+			<p class="text-body text-sm">关注信息层级、节奏与界面的克制感，追求苹果式的简洁美学。</p>
+		</div>
+		
+		<div class="glass-panel p-6">
+			<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+				<svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+				</svg>
+			</div>
+			<h3 class="text-title-3 text-slate-900 mb-2">工程</h3>
+			<p class="text-body text-sm">基于 Astro 的静态优先架构，减少不必要的运行时复杂度，追求极致性能。</p>
+		</div>
+		
+		<div class="glass-panel p-6 sm:col-span-2 lg:col-span-1">
+			<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4">
+				<svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+				</svg>
+			</div>
+			<h3 class="text-title-3 text-slate-900 mb-2">内容</h3>
+			<p class="text-body text-sm">通过分类、标签、归档与搜索建立持续可用的知识系统。</p>
+		</div>
+	</section>
+
+	<!-- Tech Stack -->
+	<section class="glass-panel p-6 sm:p-8 mb-6">
+		<h2 class="text-title-2 text-slate-900 mb-6">技术栈</h2>
+		<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+			<div class="text-center p-4 rounded-xl bg-white/40">
+				<div class="text-2xl mb-2">🚀</div>
+				<div class="font-semibold text-slate-900">Astro</div>
+				<div class="text-caption">静态站点生成</div>
+			</div>
+			<div class="text-center p-4 rounded-xl bg-white/40">
+				<div class="text-2xl mb-2">⚡</div>
+				<div class="font-semibold text-slate-900">Tailwind</div>
+				<div class="text-caption">原子化 CSS</div>
+			</div>
+			<div class="text-center p-4 rounded-xl bg-white/40">
+				<div class="text-2xl mb-2">📦</div>
+				<div class="font-semibold text-slate-900">TypeScript</div>
+				<div class="text-caption">类型安全</div>
+			</div>
+			<div class="text-center p-4 rounded-xl bg-white/40">
+				<div class="text-2xl mb-2">🎨</div>
+				<div class="font-semibold text-slate-900">MDX</div>
+				<div class="text-caption">内容创作</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section class="glass-panel p-6 sm:p-8">
+		<h2 class="text-title-2 text-slate-900 mb-4">联系方式</h2>
+		<p class="text-body mb-6">如有任何问题或建议，欢迎通过以下方式联系。</p>
+		<div class="flex flex-wrap gap-3">
+			{SOCIAL_LINKS.map((item) => (
+				<a 
+					href={item.href} 
+					target="_blank" 
+					rel="noreferrer"
+					class="btn btn-secondary"
+				>
+					{item.label}
+				</a>
+			))}
+		</div>
+	</section>
+</MainLayout>
