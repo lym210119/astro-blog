@@ -4,6 +4,13 @@ export type BlogEntry = CollectionEntry<'blog'>;
 
 export async function getAllPosts() {
 	const posts = await getCollection('blog', ({ data }) => !data.draft);
+	// 根据文章标题自动生成 heroImage
+	for (const post of posts) {
+		const title = post.data.title;
+		const encodedTitle = encodeURIComponent(title);
+		const imageUrl = `https://picsum.photos/seed/${encodedTitle}/960/480`;
+		post.data.heroImage = imageUrl;
+	}
 	return posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 }
 
