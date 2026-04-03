@@ -36,11 +36,7 @@
   --font-mono: "SF Mono", SFMono-Regular, ui-monospace, monospace;
 }
 
-/* Base Styles */
-* {
-  box-sizing: border-box;
-}
-
+/* Base */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
