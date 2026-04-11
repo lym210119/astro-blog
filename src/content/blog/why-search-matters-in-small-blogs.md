@@ -10,7 +10,7 @@ tags:
   - 信息检索
 readingTime: 4 min read
 heroImage: ../../assets/blog-placeholder-5.jpg
-seoTitle: 小型博客为什么也需要搜索｜Clarity Notes
+seoTitle: 小型博客为什么也需要搜索｜65s Notes
 seoDescription: 对于内容站点而言，搜索不仅是功能补充，更是高效率阅读路径的重要组成部分。
 ---
 

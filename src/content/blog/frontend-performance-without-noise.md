@@ -10,7 +10,7 @@ tags:
   - 用户体验
 readingTime: 7 min read
 heroImage: ../../assets/blog-placeholder-2.jpg
-seoTitle: 前端性能优化，不该制造更多噪音｜Clarity Notes
+seoTitle: 前端性能优化，不该制造更多噪音｜65s Notes
 seoDescription: 从加载策略、内容骨架和静态优先出发，构建真正让用户感到轻盈的网页体验。
 ---
 

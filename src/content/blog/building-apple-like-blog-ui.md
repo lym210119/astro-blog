@@ -10,7 +10,7 @@ tags:
   - 设计系统
 readingTime: 8 min read
 heroImage: ../../assets/blog-placeholder-4.jpg
-seoTitle: 如何把博客做出苹果官网般的质感｜Clarity Notes
+seoTitle: 如何把博客做出苹果官网般的质感｜65s Notes
 seoDescription: 从排版、玻璃质感、动效与空间秩序出发，构建更高级的博客视觉系统。
 ---
 

@@ -10,7 +10,7 @@ tags:
   - 用户信任
 readingTime: 5 min read
 heroImage: ../../assets/blog-placeholder-3.jpg
-seoTitle: 内容系统如何建立用户信任｜Clarity Notes
+seoTitle: 内容系统如何建立用户信任｜65s Notes
 seoDescription: 通过一致的分类、标签、归档与更新机制，让博客成为一个可靠的信息系统。
 ---
 

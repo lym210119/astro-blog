@@ -11,7 +11,7 @@ tags:
   - 交互设计
 readingTime: 6 min read
 heroImage: ../../assets/blog-placeholder-1.jpg
-seoTitle: 设计一种安静的数字阅读体验｜Clarity Notes
+seoTitle: 设计一种安静的数字阅读体验｜65s Notes
 seoDescription: 从信息密度、空间节奏与界面克制出发，构建更像苹果官网那样自然流动的阅读体验。
 ---
 
